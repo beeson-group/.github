@@ -1,8 +1,8 @@
 # Contributing
 
-This guide applies to every repository of the [Beeson Group](https://beeson.princeton.edu/) without a contributing guide of its own, e.g. [tycho](https://github.com/beeson-group/tycho) and [slides](https://github.com/beeson-group/slides). In it, I only explain what I expect of an issue and of a pull request. You find the setup steps in the README of each repository.
+This guide applies to every repository owned by [beeson-group](https://github.com/beeson-group).
 
-## What I expect
+## Expectations
 
 Before you change how anything behaves, make sure there is an issue for it, i.e. a page in the Issues tab of the repository where someone describes a bug or an idea. Then write `Closes #N` in the description of your pull request, where N is the number of the issue. With this line, GitHub links the two, and closes the issue once the pull request is merged. You do not need an issue for a typo, a fix to the documentation, or a dependency bump.
 
