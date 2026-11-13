@@ -1,0 +1,41 @@
+name: Bug report
+description: Something does not work as it should.
+type: Bug
+body:
+  - type: markdown
+    attributes:
+      value: Thank you for reporting a bug! Please search the open issues first, in case someone has already reported it. For a security problem, do not open an issue, and follow our [security policy](https://github.com/beeson-group/.github/blob/main/SECURITY.md) instead.
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened
+      description: What you saw, including any error message.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: What you expected
+      description: What you expected to see instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps or a minimal script to reproduce
+      description: The steps that make the bug appear, or the shortest script that does. A script in a code block (three backticks before and after it) is easiest for us to run.
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version and browser
+      description: The version you use, e.g. pytycho 0.2.0 or the release of the slides template, and your browser with its version.
+      placeholder: pytycho 0.2.0, Firefox 140
+    validations:
+      required: true
+  - type: textarea
+    id: files
+    attributes:
+      label: Files (optional)
+      description: Drag in any file that helps, e.g. a screenshot, a video, or the page or deck that shows the bug. If GitHub refuses a file as too large, share a link to it instead.
