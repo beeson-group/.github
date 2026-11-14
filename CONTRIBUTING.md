@@ -89,7 +89,8 @@ Keep your PR a draft until it is ready, which means both that you _think_ it rea
 
 1. Open an issue (or link an existing one).
 2. Create a branch following our convention.
-3. Push the branch, and open a draft PR.
-4. Wait until CI is green. Fix any failing CI tests.
-5. Once CI is green, and you are happy, check 'Ready for review'.
-6. We merge your PR.
+3. Implement.
+4. Push the branch, and open a draft PR.
+5. Wait until CI is green. Fix any failing CI tests.
+6. Once CI is green, and you are happy, check 'Ready for review'.
+7. We merge your PR.
