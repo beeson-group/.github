@@ -42,7 +42,7 @@ Below are our guidelines for issues and PRs, which should ALWAYS be followed.
 
 ### New issues
 
-Before implementing anything, make sure there is an issue for it. We have [bug](.github/ISSUE_TEMPLATE/bug_report.yml) and [idea](.github/ISSUE_TEMPLATE/idea.yml) issue templates: use them. You will get prompted to choose between either of these when creating a new issue under `<repo>` > `Issues` > `New issue`. If your issue topic does not match either template, you can write it differently. If this happens more than once: open an issue about it in [this](https://github.com/beeson-group/.github) repo!
+Before implementing anything, make sure there is an issue for it. We have [bug](.github/ISSUE_TEMPLATE/bug_report.yml) and [idea](.github/ISSUE_TEMPLATE/idea.yml) issue templates: use them. You will get prompted to choose between either of these when creating a new issue under `<repo>` > `Issues` > `New issue`. If your issue topic does not match either template, create a "Blank issue". If this happens more than once: open an issue about it in [this](https://github.com/beeson-group/.github) repo!
 
 ### Branches
 
