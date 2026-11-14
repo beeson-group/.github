@@ -1,24 +1,95 @@
 # Contributing
 
-This guide applies to every repository owned by [beeson-group](https://github.com/beeson-group).
+This guide details our expectations on contributions to each of our [beeson-group](https://github.com/beeson-group) repositories.
+
+## Ethos
+
+Our tools are open source. We are happy when you use them.
+
+We made them open source because our ethos is: "if it provides value to us, it might provide value to somebody else too".
+
+We would like you to approach using our tools with the same spirit.
+
+If you discover a problem, build a new feature, or otherwise modify the codebase locally, then consider contributing your idea so everyone else can benefit.
+
+A contribution can be any of the following:
+1. A discussions post;
+2. An update to an existing issue;
+3. A new issue; 
+4. A pull request (PR).
+
+The ordering above ranges from least to most technically demanding.  
+Any will be appreciated.
+
+## Quick explainer (skip if you are familiar with GitHub)
+
+Your step 0 should be to **check whether your contribution idea can already match to an open issue or PR**. Always scan the `Issues` and `Pull requests` tabs first, before sending your agents explore an idea we already have a PR (or work-in-progress branch) for. (also check remote branches)
+
+Issues can have one of three `Type`s:
+1. `Bug`: a crash, regression, unjustified performance problem, or unintended/unexpected behavior. NOT a typo in commenting (see below);
+2. `Feature`: new behavior the repo did not support before and will do after the issue is closed.
+3. `Task`: an investigation, analysis, refactor, performance improvement with tradeoffs, etc., but NOT new behavior.
+
+**Recycling** (or narrowly extending) **an existing issue is ALWAYS better than creating a new one,** whenever possible.
+
+This doesn't mean the scope of any one issue should grow out of control: if your idea cannot reasonably be matched with an existing issue, don't force the connection: open a new issue. **If you are fixing a bug which is clearly reproducible from `main` branch code:** always make this a standalone issue, don't fold it into a feature issue.
+
+Issues and PRs are linked (in either direction) by including the magic `#N` text in GitHub, where `N` is the number of the issue/PR.
 
 ## Expectations
 
-Before you change how anything behaves, make sure there is an issue for it, i.e. a page in the Issues tab of the repository where someone describes a bug or an idea. Then write `Closes #N` in the description of your pull request, where N is the number of the issue. With this line, GitHub links the two, and closes the issue once the pull request is merged. You do not need an issue for a typo, a fix to the documentation, or a dependency bump.
+Below are our guidelines for issues and PRs, which should ALWAYS be followed.
 
-Give each pull request ONE purpose. For example, if you fix the color of a slider in tycho and notice a badly named function along the way, the rename is a second purpose, hence a second pull request. You do not have to tidy your commits, since I squash a messy pull request into one commit when I merge it.
+### New issues
 
-Keep your pull request a draft until it is ready, and wait for the checks to be green before you ask for a review. The checks (also called CI, for continuous integration) are the tests that GitHub runs on every push to a pull request.
+Before implementing anything, make sure there is an issue for it. We have [bug](.github/ISSUE_TEMPLATE/bug_report.yml) and [idea](.github/ISSUE_TEMPLATE/idea.yml) issue templates: use them. You will get prompted to choose between either of these when creating a new issue under `<repo>` > `Issues` > `New issue`. If your issue topic does not match either template, you can write it differently. If this happen more than once: open an issue about it in [this](https://github.com/beeson-group/.github) repo!
 
-## Working with coding agents
+### Branches
 
-I encourage you to work with a coding agent, which reads the `AGENTS.md` of each repository on its own. You are still the author of what you submit: you have read every line of it, run it, and can explain it. Your agent may draft the description of the pull request, as long as you agree with it.
+Your issue exists. You are still not ready to implement: you should follow our convention for naming branches. Name your branch after its author (you) and its issue number (`N`):  
+`<surname>/<N>-<two-or-three-words>`,  
+ALWAYS in lowercase and with hyphens between the words. For example, Claudio Vestini's branch for issue `#12` on slider colors should be named `vestini/12-slider-color`.
 
-## The life of a contribution
+If your change is minor (e.g. under 20 lines in total diff), for instance a typo or extremely small and obvious bug, you do not need to link or create an issue: leave the number out of your branch name, which stands as a replacement for the issue (e.g. `vestini/readme-typo`).
 
-1. Open an issue with the bug report or the idea form (or find an existing one).
-2. Create a branch from `main` with a short name, e.g. `fix-slider-color`.
-3. Push the branch, and open a draft pull request. On GitHub, click the arrow next to the green 'Create pull request' button, then 'Create draft pull request'. Fill in the template, including the `Closes #N` line.
-4. Watch the checks at the bottom of the pull request. If one fails, click 'Details' to read its log, fix the problem, and push again.
-5. Once the checks are green, click 'Ready for review' at the bottom of the pull request, and ask Ryne or me for a review in the 'Reviewers' box on the right.
-6. Answer the review by pushing more commits to the same branch. Once we approve, one of us merges the pull request, the issue is closed automatically, and you can delete your branch.
+The easiest way create such a branch is the [GitHub CLI](https://cli.github.com/). Install it with [Homebrew](https://brew.sh/) on macOS, or with `winget` on Windows (for Linux, follow the [install instructions](https://github.com/cli/cli#installation)). Then log in. Here are terminal commands you can run to quickly get set up:
+
+```bash
+brew install gh                    # on macOS, **OR**
+winget install --id GitHub.cli     # on Windows
+
+gh auth login                      # on either
+```
+
+Once you have cloned the repository (check out instructions for how to do this in each repository's README.md), from the folder of the repository you are working on, create your branch:
+
+```bash
+gh issue develop <N> --name <surname>/<N>-<two-or-three-words> --checkout
+```
+
+You are now ready to implement.
+
+### Working with coding agents
+
+We _encourage_ you to work with a coding agent (or, even better, several!). We set up `AGENTS.md` files in each repository, your agent will automatically read these and follow our guidelines.
+
+**You are still the author of what you submit**:
+- We expect you to be able to explain what your implementation does, at a high level.
+- We DO NOT expect you to have read every single line of _code_.
+- We DO expect you to have read and reviewed every single line of _text_ that is intended for humans to read, if there is no attribution.
+- You may write your descriptions with agents, so long as they are signed as `<harness>:<model>`. We might take more time to review your code if this is the case.
+
+### Pull requests
+
+Once your implementation is complete, open a PR (you can do this with the GitHub CLI, e.g. `gh pr create --draft`, or directly on GitHub once your branch has been pushed). Write `Closes #N` at the top of the description of your PR. Try not to duplicate text between the PR description and the issue description.
+
+Keep your PR a draft until it is ready, which means both that you _think_ it ready, and that all continuous integration (CI) checks are passing. ALWAYS wait for CI checks to be green before you ask for a review. If you think something is badly broken with our CI, you can say so in your PR description with a comment tagging reviewers, and we might accept your PR after we changed the CI.
+
+## In short
+
+1. Open an issue (or link an existing one).
+2. Create a branch following our convention.
+3. Push the branch, and open a draft PR.
+4. Wait until CI is green. Fix any failing CI tests.
+5. Once CI is green, and you are happy, check 'Ready for review'.
+6. We merge your PR.
