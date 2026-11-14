@@ -1,10 +1,12 @@
 <!-- Thank you! Keep this pull request a draft until the checks are green. What I expect of a pull request is explained in https://github.com/beeson-group/.github/blob/main/CONTRIBUTING.md -->
 
-## What changed and why
-
-<!-- One or two sentences on what this pull request changes, and why. Replace N with the number of the issue. For a typo, a documentation fix, or a dependency bump, delete the line. -->
+<!-- Replace N with the number of the issue. Delete the line for a change of under 20 lines, a change of the documentation alone, or a dependency bump. -->
 
 Closes #N
+
+## What changed and why
+
+<!-- One or two sentences on what this pull request changes, and why. Do not repeat the text of the issue. -->
 
 ## How I checked it
 
