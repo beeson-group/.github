@@ -1,6 +1,6 @@
 # Security policy
 
-If you find a vulnerability in our code, please report it privately, through GitHub's [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability), so that we can fix it before it is disclosed.
+If you find a vulnerability in our code, please report it privately, through GitHub's [private vulnerability reporting](https://docs.github.com/en/code-security/security-advisories/guidance-on-reporting-and-writing-information-about-vulnerabilities/privately-reporting-a-security-vulnerability).
 
 To report a vulnerability, follow the steps below.
 
