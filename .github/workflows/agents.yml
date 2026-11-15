@@ -1,0 +1,26 @@
+name: agents
+
+# this workflow is reused in beeson-group/tycho and beeson-group/slides. its job is red when the
+# blocks between shared:begin and shared:end in AGENTS.md differ from agents/shared.md on main
+on:
+  workflow_call:
+
+permissions:
+  contents: read
+
+jobs:
+  shared:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - run: |
+          blocks() { sed -n '/^<!-- shared:begin -->$/,/^<!-- shared:end -->$/p'; }
+          curl -fsSL -o shared.md https://raw.githubusercontent.com/beeson-group/.github/main/agents/shared.md
+          blocks < shared.md > canonical.md
+          blocks < AGENTS.md > copy.md
+          diff -u canonical.md copy.md || {
+            echo "::error file=AGENTS.md::The shared blocks differ from https://github.com/beeson-group/.github/blob/main/agents/shared.md. Edit the text there first, then copy it here."
+            exit 1
+          }
