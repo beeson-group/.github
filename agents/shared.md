@@ -1,6 +1,17 @@
 <!-- This file is the canonical copy of the text shared by the AGENTS.md files of beeson-group/tycho and beeson-group/slides. A full copy of every block between shared:begin and shared:end is kept in each AGENTS.md, in the same order. Edit a block here first, then copy it into both files. The workflow `agents` is red on a pull request in either repository whose blocks differ from this file. Text outside the blocks is not compared. -->
 
 <!-- shared:begin -->
+## Hard invariants
+
+Hard invariants are never traded away for other goals. When a change would break one, stop and ask the person you work for. Conventions may be argued with.
+
+1. Phones are supported.
+2. Great performance on slow machines is always an objective.
+3. The best part is no part. Complexity is never favored when a simpler solution exists.
+<!-- shared:end -->
+<!-- The invariants of each repository are numbered from 4 here. -->
+
+<!-- shared:begin -->
 ## Issues and branches
 
 - Before you start a change, search the open issues, the open PRs, and the remote branches for the same work, and report what you find to the person you work for.
