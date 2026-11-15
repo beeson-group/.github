@@ -16,6 +16,6 @@ Closes #N
 
 <!-- Before and after screenshots and/or videos. Side by side. -->
 
-## Changelog line
+## Changelog
 
 <!-- In tycho, copy here the line you added under `## [Unreleased]` in `CHANGELOG.md`. Write "none" if the repository does not have a changelog, or if users will not notice the change. -->
