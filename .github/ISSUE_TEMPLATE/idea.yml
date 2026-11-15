@@ -1,26 +1,28 @@
 name: Idea
-description: A feature or a change that you would like.
+description: A feature or change that you would like.
 type: Feature
 body:
   - type: markdown
     attributes:
-      value: Thank you for sharing an idea! Please search the open issues first, in case someone has already proposed it.
+      value: Thank you for sharing your idea! Please search the open issues first, in case someone has already proposed it.
   - type: textarea
     id: problem
     attributes:
-      label: The problem
-      description: What you are trying to do, and what gets in your way today.
+      label: Idea
+      description: What you want to achieve, why you cannot achieve it today. Screenshots, videos or simple sketches are helpful.
     validations:
       required: true
   - type: textarea
-    id: proposal
+    id: hard
     attributes:
-      label: What you would like
-      description: How you would like it to work. A sketch or a screenshot helps.
+      label: Hard requirements
+      description: The minimum necessary set of changes.
     validations:
       required: true
   - type: textarea
-    id: alternatives
+    id: soft
     attributes:
-      label: Alternatives (optional)
-      description: Other ways to solve the problem that you considered, or how you work around it today.
+      label: Soft requirements (optional)
+      description: Would be nice to have, but not necessary.
+    validations:
+      required: false
