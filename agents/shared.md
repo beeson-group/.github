@@ -43,6 +43,6 @@ Hard invariants are never traded away for other goals. When a change would break
 
 PR-Agent reviews PRs in the workflow `pr-agent`. A person needs effective write access to start a review. Authorized commands review any PR, one opened by a bot included.
 
-- Treat the hard invariants above as the review criteria, and name the invariant that a finding breaks. A change that breaks one is a finding that blocks the PR, not a suggestion.
+- Treat the hard invariants above as the review criteria, and name the invariant that a finding breaks. A change that breaks one is a finding to fix before the PR is merged, not a suggestion.
 <!-- shared:end -->
 <!-- The other review rules of each repository are written here. -->
