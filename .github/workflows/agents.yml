@@ -17,7 +17,8 @@ jobs:
           persist-credentials: false
       - run: |
           blocks() { sed -n '/^<!-- shared:begin -->$/,/^<!-- shared:end -->$/p'; }
-          curl -fsSL https://raw.githubusercontent.com/beeson-group/.github/main/agents/shared.md | blocks > canonical.md
+          curl -fsSL -o shared.md https://raw.githubusercontent.com/beeson-group/.github/main/agents/shared.md
+          blocks < shared.md > canonical.md
           blocks < AGENTS.md > copy.md
           diff -u canonical.md copy.md || {
             echo "::error file=AGENTS.md::The shared blocks differ from https://github.com/beeson-group/.github/blob/main/agents/shared.md. Edit the text there first, then copy it here."
